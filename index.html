@@ -71,45 +71,53 @@
         </div>
 
         <!-- HERO -->
-        <div id="home"
-            class="relative w-full min-h-[100dvh] overflow-hidden bg-white text-slate-800 font-sans flex items-center justify-center"
-            style="background-image: linear-gradient(rgba(248, 250, 252, 0.65), rgba(248, 250, 252, 0.85)), url('https://images.unsplash.com/photo-1549140608-592f15594042?q=80&w=2560&auto=format&fit=crop'); background-size: cover; background-position: center;">
+<div id="home"
+    class="relative w-full min-h-[100dvh] overflow-hidden bg-white text-slate-800 font-sans flex items-center justify-center"
+    style="background-image: linear-gradient(rgba(248, 250, 252, 0.65), rgba(248, 250, 252, 0.85)), url('https://images.unsplash.com/photo-1549140608-592f15594042?q=80&w=2560&auto=format&fit=crop'); background-size: cover; background-position: center;">
 
-            <div id="bg-text" class="absolute inset-0 flex items-center justify-center z-[70] pointer-events-none pb-24 md:pb-32 transition-all duration-[1800ms] ease-out transform opacity-0 scale-[0.95]">
-                <h1 class="text-[20vw] sm:text-[18vw] md:text-[16vw] font-black tracking-tighter leading-none select-none whitespace-nowrap"
-                    style="-webkit-text-stroke: 2px rgba(148, 163, 184, 0.4); -webkit-text-fill-color: transparent; color: transparent; filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.03));">
-                    PORTFOLIO
-                </h1>
-            </div>
+    <!-- MOBILE/SM BACKGROUND OVERLAY (Increased opacity to 35%) -->
+    <div class="absolute inset-0 z-[10] block md:hidden pointer-events-none opacity-75"
+         style="background-image: url('images/athun.png'); background-size: cover; background-position: top center;">
+    </div>
 
-            <div id="middle-text" class="absolute inset-0 flex items-center justify-center z-[70] pointer-events-none pt-24 md:pt-32 px-4 transition-all duration-[1200ms] delay-[500ms] ease-out transform opacity-0 translate-y-[30px]">
-                <h2 class="text-[13vw] sm:text-[11vw] md:text-[10vw] font-['Dancing_Script',_cursive] text-slate-600 opacity-90 leading-none select-none mix-blend-multiply text-center"
-                    style="text-shadow: 0px 4px 15px rgba(255, 255, 255, 0.8);">
-                    Athun Velandy
-                </h2>
-            </div>
+    <!-- BACKGROUND TEXT (Enhanced text stroke color & visibility) -->
+    <div id="bg-text" class="absolute inset-0 flex items-center justify-center z-[70] pointer-events-none pb-24 md:pb-32 transition-all duration-[1800ms] ease-out transform opacity-0 scale-[0.95]">
+        <h1 class="text-[20vw] sm:text-[18vw] md:text-[16vw] font-black tracking-tighter leading-none select-none whitespace-nowrap"
+            style="-webkit-text-stroke: 2.5px rgba(100, 116, 139, 0.6); -webkit-text-fill-color: transparent; color: transparent; filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.05));">
+            PORTFOLIO
+        </h1>
+    </div>
 
-            <div id="marker" class="absolute top-[8%] left-[4%] md:top-[15%] md:left-[15%] z-30 w-20 h-20 sm:w-32 sm:h-32 md:w-48 md:h-48 pointer-events-none transition-all duration-[1000ms] delay-[1000ms] ease-out transform opacity-0 -translate-x-[20px] -rotate-12">
-                <svg viewBox="0 0 200 200" class="w-full h-full text-slate-400 opacity-80 drop-shadow-sm" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M 40 100 L 55 30 L 90 90 L 110 40 L 120 110" />
-                    <path d="M 130 50 L 140 100 L 165 50 L 130 150" />
-                </svg>
-            </div>
+    <!-- MIDDLE TEXT (Darkened text color to text-slate-800 for better pop) -->
+    <div id="middle-text" class="absolute inset-0 flex items-center justify-center z-[70] pointer-events-none pt-24 md:pt-32 px-4 transition-all duration-[1200ms] delay-[500ms] ease-out transform opacity-0 translate-y-[30px]">
+        <h2 class="text-[13vw] sm:text-[11vw] md:text-[10vw] font-['Dancing_Script',_cursive] text-slate-800 leading-none select-none mix-blend-multiply text-center"
+            style="text-shadow: 0px 4px 15px rgba(255, 255, 255, 0.9);">
+            Athun Velandy
+        </h2>
+    </div>
 
-            <div class="absolute bottom-0 z-0 right-1/2 translate-x-1/2 lg:translate-x-0 lg:right-[33%] h-[58%] sm:h-[65%] md:h-[99%] w-full lg:w-auto pointer-events-none flex justify-center items-end">
-                <img id="hero-img" src="images/athun.png" alt="Athun Velandy portrait"
-                    class="h-full w-auto object-contain object-bottom grayscale-[15%] transition-all duration-[1500ms] delay-[800ms] ease-out transform opacity-0 translate-y-[50px]"
-                    style="filter: drop-shadow(0px -10px 30px rgba(255, 255, 255, 0.9)) drop-shadow(0px 0px 15px rgba(148, 163, 184, 0.2)); mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%); -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);"
-                    onerror="this.style.display='none'" />
-            </div>
+    <div id="marker" class="absolute top-[8%] left-[4%] md:top-[15%] md:left-[15%] z-30 w-20 h-20 sm:w-32 sm:h-32 md:w-48 md:h-48 pointer-events-none transition-all duration-[1000ms] delay-[1000ms] ease-out transform opacity-0 -translate-x-[20px] -rotate-12">
+        <svg viewBox="0 0 200 200" class="w-full h-full text-slate-400 opacity-80 drop-shadow-sm" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 40 100 L 55 30 L 90 90 L 110 40 L 120 110" />
+            <path d="M 130 50 L 140 100 L 165 50 L 130 150" />
+        </svg>
+    </div>
 
-            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-1 animate-bounce">
-                <span class="text-[9px] uppercase tracking-[0.3em] font-bold text-gray-400">Scroll</span>
-                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-            </div>
+    <!-- DESKTOP IMAGE (Maintained design exactly) -->
+    <div class="hidden md:flex absolute bottom-0 z-0 right-1/2 translate-x-1/2 lg:translate-x-0 lg:right-[33%] md:h-[99%] w-full lg:w-auto pointer-events-none justify-center items-end">
+        <img id="hero-img" src="images/athun.png" alt="Athun Velandy portrait"
+            class="h-full w-auto object-contain object-bottom grayscale-[15%] transition-all duration-[1500ms] delay-[800ms] ease-out transform opacity-0 translate-y-[50px]"
+            style="filter: drop-shadow(0px -10px 30px rgba(255, 255, 255, 0.9)) drop-shadow(0px 0px 15px rgba(148, 163, 184, 0.2)); mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%); -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);"
+            onerror="this.style.display='none'" />
+    </div>
 
-            <div class="absolute bottom-0 left-0 w-full h-32 md:h-48 z-50 pointer-events-none" style="background: linear-gradient(to top, #f8fafc 10%, transparent 100%);"></div>
-        </div>
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-1 animate-bounce">
+        <span class="text-[9px] uppercase tracking-[0.3em] font-bold text-gray-400">Scroll</span>
+        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </div>
+
+    <div class="absolute bottom-0 left-0 w-full h-32 md:h-48 z-50 pointer-events-none" style="background: linear-gradient(to top, #f8fafc 10%, transparent 100%);"></div>
+</div>
 
         <!-- ABOUT -->
         <section id="about" class="relative min-h-screen w-full bg-[#fcfcfc] py-20 px-6 sm:px-10 md:px-24 overflow-hidden"
@@ -352,10 +360,10 @@
                         <p class="text-gray-500 text-base sm:text-lg max-w-md leading-relaxed mb-12">Currently available for full-stack opportunities and interesting collaborations. I usually respond within 24 hours.</p>
 
                         <div class="flex gap-6">
-                            <a href="#" aria-label="LinkedIn" class="text-3xl text-gray-400 transition-all duration-300 hover:text-[#0077b5] transform hover:-translate-y-1">
+                            <a href="https://www.linkedin.com/in/athun-v/" aria-label="LinkedIn" class="text-3xl text-gray-400 transition-all duration-300 hover:text-[#0077b5] transform hover:-translate-y-1">
                                 <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                             </a>
-                            <a href="#" aria-label="GitHub" class="text-3xl text-gray-400 transition-all duration-300 hover:text-[#333] transform hover:-translate-y-1">
+                            <a href="https://github.com/athunv/" aria-label="GitHub" class="text-3xl text-gray-400 transition-all duration-300 hover:text-[#333] transform hover:-translate-y-1">
                                 <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                             </a>
                             <a href="#" aria-label="WhatsApp" class="text-3xl text-gray-400 transition-all duration-300 hover:text-[#25D366] transform hover:-translate-y-1">
