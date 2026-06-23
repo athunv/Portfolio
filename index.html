@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Athun Velandy - Portfolio</title>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap"
+            rel="stylesheet">
+
+        <style>
+            html { scroll-behavior: smooth; }
+            body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+            .font-display { font-family: 'Fraunces', serif; }
+            .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+            .reveal.in-view { opacity: 1; transform: translateY(0); }
+            ::-webkit-scrollbar { width: 8px; }
+            ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+            @media (prefers-reduced-motion: reduce) {
+                .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+                html { scroll-behavior: auto; }
+            }
+            a:focus-visible, button:focus-visible { outline: 2px solid #2563eb; outline-offset: 3px; border-radius: 4px; }
+        </style>
+    </head>
+    <body class="m-0 p-0 overflow-x-hidden bg-[#fcfcfc]">
+
+        <!-- NAV -->
+        <nav
+            class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-16 py-5 md:py-6 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-black/5">
+
+            <div id="nav-logo" class="group cursor-pointer" role="button" tabindex="0" aria-label="Scroll to top">
+                <div
+                    class="relative flex items-center justify-center w-11 h-11 md:w-12 md:h-12 border border-black/10 rounded-full transition-all duration-500 group-hover:border-black group-hover:bg-black">
+                    <span
+                        class="text-xl md:text-2xl font-display font-medium tracking-tighter text-black group-hover:text-white transition-colors duration-300">A</span>
+                </div>
+            </div>
+
+            <!-- Desktop Links -->
+            <ul class="hidden md:flex items-center space-x-8">
+                <li><a href="#home" class="nav-link text-[10px] uppercase tracking-[0.3em] font-bold transition-colors duration-300 relative group text-black">Home<span class="nav-underline absolute -bottom-1 left-0 h-[1.5px] bg-black transition-all duration-300 w-full"></span></a></li>
+                <li><a href="#about" class="nav-link text-[10px] uppercase tracking-[0.3em] font-bold transition-colors duration-300 relative group text-gray-400">About<span class="nav-underline absolute -bottom-1 left-0 h-[1.5px] bg-black transition-all duration-300 w-0 group-hover:w-full"></span></a></li>
+                <li><a href="#resume" class="nav-link text-[10px] uppercase tracking-[0.3em] font-bold transition-colors duration-300 relative group text-gray-400">Experience<span class="nav-underline absolute -bottom-1 left-0 h-[1.5px] bg-black transition-all duration-300 w-0 group-hover:w-full"></span></a></li>
+                <li><a href="#skills" class="nav-link text-[10px] uppercase tracking-[0.3em] font-bold transition-colors duration-300 relative group text-gray-400">Skills<span class="nav-underline absolute -bottom-1 left-0 h-[1.5px] bg-black transition-all duration-300 w-0 group-hover:w-full"></span></a></li>
+                <li><a href="#projects" class="nav-link text-[10px] uppercase tracking-[0.3em] font-bold transition-colors duration-300 relative group text-gray-400">Project<span class="nav-underline absolute -bottom-1 left-0 h-[1.5px] bg-black transition-all duration-300 w-0 group-hover:w-full"></span></a></li>
+                <li><a href="#contact" class="nav-link text-[10px] uppercase tracking-[0.3em] font-bold transition-colors duration-300 relative group text-gray-400">Contact<span class="nav-underline absolute -bottom-1 left-0 h-[1.5px] bg-black transition-all duration-300 w-0 group-hover:w-full"></span></a></li>
+            </ul>
+
+            <!-- Mobile Hamburger -->
+            <button id="menu-btn" aria-label="Open menu" aria-expanded="false" class="md:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 group">
+                <span class="hamburger-line w-6 h-[2px] bg-black transition-all duration-300"></span>
+                <span class="hamburger-line w-6 h-[2px] bg-black transition-all duration-300"></span>
+                <span class="hamburger-line w-6 h-[2px] bg-black transition-all duration-300"></span>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/98 backdrop-blur-md flex flex-col items-center justify-center gap-8 transition-all duration-400 ease-out opacity-0 pointer-events-none -translate-y-4">
+            <a href="#home" class="mobile-link text-2xl font-display font-medium text-gray-800">Home</a>
+            <a href="#about" class="mobile-link text-2xl font-display font-medium text-gray-800">About</a>
+            <a href="#resume" class="mobile-link text-2xl font-display font-medium text-gray-800">Experience</a>
+            <a href="#skills" class="mobile-link text-2xl font-display font-medium text-gray-800">Skills</a>
+            <a href="#projects" class="mobile-link text-2xl font-display font-medium text-gray-800">Project</a>
+            <a href="#contact" class="mobile-link text-2xl font-display font-medium text-gray-800">Contact</a>
+        </div>
+
+        <!-- HERO -->
+        <div id="home"
+            class="relative w-full min-h-[100dvh] overflow-hidden bg-white text-slate-800 font-sans flex items-center justify-center"
+            style="background-image: linear-gradient(rgba(248, 250, 252, 0.65), rgba(248, 250, 252, 0.85)), url('https://images.unsplash.com/photo-1549140608-592f15594042?q=80&w=2560&auto=format&fit=crop'); background-size: cover; background-position: center;">
+
+            <div id="bg-text" class="absolute inset-0 flex items-center justify-center z-[70] pointer-events-none pb-24 md:pb-32 transition-all duration-[1800ms] ease-out transform opacity-0 scale-[0.95]">
+                <h1 class="text-[20vw] sm:text-[18vw] md:text-[16vw] font-black tracking-tighter leading-none select-none whitespace-nowrap"
+                    style="-webkit-text-stroke: 2px rgba(148, 163, 184, 0.4); -webkit-text-fill-color: transparent; color: transparent; filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.03));">
+                    PORTFOLIO
+                </h1>
+            </div>
+
+            <div id="middle-text" class="absolute inset-0 flex items-center justify-center z-[70] pointer-events-none pt-24 md:pt-32 px-4 transition-all duration-[1200ms] delay-[500ms] ease-out transform opacity-0 translate-y-[30px]">
+                <h2 class="text-[13vw] sm:text-[11vw] md:text-[10vw] font-['Dancing_Script',_cursive] text-slate-600 opacity-90 leading-none select-none mix-blend-multiply text-center"
+                    style="text-shadow: 0px 4px 15px rgba(255, 255, 255, 0.8);">
+                    Athun Velandy
+                </h2>
+            </div>
+
+            <div id="marker" class="absolute top-[8%] left-[4%] md:top-[15%] md:left-[15%] z-30 w-20 h-20 sm:w-32 sm:h-32 md:w-48 md:h-48 pointer-events-none transition-all duration-[1000ms] delay-[1000ms] ease-out transform opacity-0 -translate-x-[20px] -rotate-12">
+                <svg viewBox="0 0 200 200" class="w-full h-full text-slate-400 opacity-80 drop-shadow-sm" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M 40 100 L 55 30 L 90 90 L 110 40 L 120 110" />
+                    <path d="M 130 50 L 140 100 L 165 50 L 130 150" />
+                </svg>
+            </div>
+
+            <div class="absolute bottom-0 z-0 right-1/2 translate-x-1/2 lg:translate-x-0 lg:right-[33%] h-[58%] sm:h-[65%] md:h-[99%] w-full lg:w-auto pointer-events-none flex justify-center items-end">
+                <img id="hero-img" src="/images/athun.png" alt="Athun Velandy portrait"
+                    class="h-full w-auto object-contain object-bottom grayscale-[15%] transition-all duration-[1500ms] delay-[800ms] ease-out transform opacity-0 translate-y-[50px]"
+                    style="filter: drop-shadow(0px -10px 30px rgba(255, 255, 255, 0.9)) drop-shadow(0px 0px 15px rgba(148, 163, 184, 0.2)); mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%); -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);"
+                    onerror="this.style.display='none'" />
+            </div>
+
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-1 animate-bounce">
+                <span class="text-[9px] uppercase tracking-[0.3em] font-bold text-gray-400">Scroll</span>
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            </div>
+
+            <div class="absolute bottom-0 left-0 w-full h-32 md:h-48 z-50 pointer-events-none" style="background: linear-gradient(to top, #f8fafc 10%, transparent 100%);"></div>
+        </div>
+
+        <!-- ABOUT -->
+        <section id="about" class="relative min-h-screen w-full bg-[#fcfcfc] py-20 px-6 sm:px-10 md:px-24 overflow-hidden"
+            style="background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://images.unsplash.com/photo-1549140608-592f15594042?q=80&w=2560&auto=format&fit=crop'); background-size: cover;">
+            <div class="max-w-[1400px] mx-auto relative h-full">
+
+                <div class="relative pt-10 font-display reveal">
+                    <h1 class="text-[13vw] sm:text-[10vw] md:text-[10vw] font-black tracking-tighter text-black leading-none uppercase">Full Stack</h1>
+                    <h2 class="relative md:absolute md:top-[110%] md:left-[38%] mt-1 md:mt-0 text-[11vw] sm:text-[9vw] md:text-[9vw] font-['Dancing_Script',_cursive] text-blue-700 leading-none whitespace-nowrap z-10">developer</h2>
+                </div>
+
+                <div class="mt-28 md:mt-24 max-w-md ml-1 sm:ml-4 reveal">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-black inline-block">About Me</h3>
+                    <p class="text-gray-700 text-base sm:text-lg leading-relaxed font-medium">
+                        I am a <span class="text-blue-600">Full Stack Developer</span> skilled in Python, Django, and React, with experience building secure, dynamic, and user-friendly web applications. Passionate about developing scalable solutions and continuously enhancing technical expertise to deliver impactful business outcomes.
+                    </p>
+                </div>
+
+                <div class="md:absolute bottom-0 right-0 w-full md:w-80 mt-12 md:mt-0 reveal">
+                    <div class="bg-white/60 backdrop-blur-sm p-6 rounded-xl border border-gray-200 shadow-sm">
+                        <h3 class="text-sm font-black uppercase tracking-widest text-gray-400 mb-6">Personal Info</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-end border-b border-gray-200 pb-1">
+                                <span class="text-[10px] font-bold uppercase text-gray-400">Location</span>
+                                <span class="text-sm font-bold text-gray-900">Kerala, India</span>
+                            </div>
+                            <div class="flex justify-between items-end border-b border-gray-200 pb-1">
+                                <span class="text-[10px] font-bold uppercase text-gray-400">Experience</span>
+                                <span class="text-sm font-bold text-gray-900">1+ Years</span>
+                            </div>
+                            <div class="flex justify-between items-end border-b border-gray-200 pb-1">
+                                <span class="text-[10px] font-bold uppercase text-gray-400">Role</span>
+                                <span class="text-sm font-bold text-gray-900">Freelance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RESUME -->
+        <section id="resume" class="relative w-full bg-[#fcfcfc] py-20 px-6 sm:px-10 md:px-24">
+            <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+
+                <div class="lg:col-span-7 reveal">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-10 border-b-2 border-black inline-block pb-1">Experience</h3>
+
+                    <div class="space-y-12 border-l border-gray-200 pl-6 md:pl-8 relative">
+                        <div class="relative">
+                            <div class="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 rounded-full bg-blue-600 ring-4 ring-[#fcfcfc]"></div>
+                            <div class="mb-2 flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 md:gap-4">
+                                <h4 class="text-xl font-bold text-gray-900">Full Stack Developer</h4>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-gray-400 whitespace-nowrap">Jan 2025 – Present</span>
+                            </div>
+                            <p class="text-blue-700 font-['Dancing_Script',_cursive] text-2xl mb-1">Thinkfotech Innovative Solutions</p>
+                            <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">Thalassery, Kerala, India</p>
+                            <ul class="space-y-2 text-gray-600 text-sm leading-relaxed list-disc list-outside ml-4 marker:text-gray-300">
+                                <li>Built scalable full-stack apps with Django REST Framework, React, and MySQL.</li>
+                                <li>Integrate AI-powered features into applications, automating data workflows and reducing manual processing time by 40%.</li>
+                                <li>Containerize applications using Docker for consistent deployment across environments.</li>
+                                <li>Collaborate on complete development cycles — from planning and coding to testing, deployment, and optimization — ensuring clean, maintainable, and production-ready solutions.</li>
+                            </ul>
+                        </div>
+
+                        <div class="relative">
+                            <div class="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 rounded-full bg-gray-300 ring-4 ring-[#fcfcfc]"></div>
+                            <div class="mb-2 flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 md:gap-4">
+                                <h4 class="text-xl font-bold text-gray-900">Python Django Full Stack Developer Intern</h4>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-gray-400 whitespace-nowrap">Feb 2024 – Jul 2024</span>
+                            </div>
+                            <p class="text-blue-700 font-['Dancing_Script',_cursive] text-2xl mb-1">Luminar Technolab</p>
+                            <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">Calicut, Kerala, India</p>
+                            <ul class="space-y-2 text-gray-600 text-sm leading-relaxed list-disc list-outside ml-4 marker:text-gray-300">
+                                <li>Acquired hands-on experience in full-stack web development, working with Django REST Framework, React, and relational databases to build end-to-end applications.</li>
+                                <li>Engineered and implemented secure backend systems with authentication, scalable APIs, and optimized database management, ensuring efficient and reliable data handling.</li>
+                                <li>Crafted responsive front-end interfaces using React, seamlessly integrating APIs to deliver real-time updates and an enhanced user experience across devices.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 reveal">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-10 border-b-2 border-black inline-block pb-1">Education</h3>
+                    <div class="space-y-10">
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-2 block">Dec 2020 – Dec 2023</span>
+                            <h4 class="text-lg font-bold text-gray-900 leading-snug mb-1">Bachelor of Computer Applications (BCA)</h4>
+                            <p class="text-gray-500 text-sm font-medium mb-4">College of Commerce Kannur (IGNOU)<span class="block text-xs text-gray-400 mt-0.5">Kannur, Kerala</span></p>
+                            <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 mt-4">
+                                <span class="text-[10px] font-bold uppercase text-gray-400 block mb-1">Relevant Coursework</span>
+                                <p class="text-xs text-gray-600 leading-relaxed">Data Structures, Software Engineering, Operating Systems, Algorithms, DBMS, CO & ALP</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-2 block">2018 – 2020</span>
+                            <h4 class="text-lg font-bold text-gray-900 leading-snug mb-1">Higher Secondary</h4>
+                            <p class="text-gray-500 text-sm font-medium">GHSS Kuthuparamba<span class="block text-xs text-gray-400 mt-0.5">Kannur, Kerala</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="relative w-full bg-[#fcfcfc] py-20 px-6 sm:px-10 md:px-24">
+            <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+
+                <div class="lg:col-span-7 reveal">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-10 border-b-2 border-black inline-block pb-1">Technical Skills</h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
+                        <div class="relative skill-bar" data-pct="95">
+                            <div class="flex justify-between items-end mb-2"><span class="text-sm font-bold text-gray-900 uppercase tracking-wider">HTML</span><span class="text-[11px] font-bold text-blue-600 tracking-widest">95%</span></div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="bar-fill bg-blue-600 h-1.5 rounded-full transition-all duration-700 ease-out" style="width:0%"></div></div>
+                        </div>
+                        <div class="relative skill-bar" data-pct="93">
+                            <div class="flex justify-between items-end mb-2"><span class="text-sm font-bold text-gray-900 uppercase tracking-wider">CSS</span><span class="text-[11px] font-bold text-blue-600 tracking-widest">93%</span></div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="bar-fill bg-blue-600 h-1.5 rounded-full transition-all duration-700 ease-out" style="width:0%"></div></div>
+                        </div>
+                        <div class="relative skill-bar" data-pct="92">
+                            <div class="flex justify-between items-end mb-2"><span class="text-sm font-bold text-gray-900 uppercase tracking-wider">React</span><span class="text-[11px] font-bold text-blue-600 tracking-widest">92%</span></div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="bar-fill bg-blue-600 h-1.5 rounded-full transition-all duration-700 ease-out" style="width:0%"></div></div>
+                        </div>
+                        <div class="relative skill-bar" data-pct="90">
+                            <div class="flex justify-between items-end mb-2"><span class="text-sm font-bold text-gray-900 uppercase tracking-wider">Python</span><span class="text-[11px] font-bold text-blue-600 tracking-widest">90%</span></div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="bar-fill bg-blue-600 h-1.5 rounded-full transition-all duration-700 ease-out" style="width:0%"></div></div>
+                        </div>
+                        <div class="relative skill-bar" data-pct="90">
+                            <div class="flex justify-between items-end mb-2"><span class="text-sm font-bold text-gray-900 uppercase tracking-wider">Django REST Framework</span><span class="text-[11px] font-bold text-blue-600 tracking-widest">90%</span></div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="bar-fill bg-blue-600 h-1.5 rounded-full transition-all duration-700 ease-out" style="width:0%"></div></div>
+                        </div>
+                        <div class="relative skill-bar" data-pct="90">
+                            <div class="flex justify-between items-end mb-2"><span class="text-sm font-bold text-gray-900 uppercase tracking-wider">Tailwind CSS</span><span class="text-[11px] font-bold text-blue-600 tracking-widest">90%</span></div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="bar-fill bg-blue-600 h-1.5 rounded-full transition-all duration-700 ease-out" style="width:0%"></div></div>
+                        </div>
+                        <div class="relative skill-bar" data-pct="85">
+                            <div class="flex justify-between items-end mb-2"><span class="text-sm font-bold text-gray-900 uppercase tracking-wider">Django</span><span class="text-[11px] font-bold text-blue-600 tracking-widest">85%</span></div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="bar-fill bg-blue-600 h-1.5 rounded-full transition-all duration-700 ease-out" style="width:0%"></div></div>
+                        </div>
+                        <div class="relative skill-bar" data-pct="85">
+                            <div class="flex justify-between items-end mb-2"><span class="text-sm font-bold text-gray-900 uppercase tracking-wider">JavaScript</span><span class="text-[11px] font-bold text-blue-600 tracking-widest">85%</span></div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="bar-fill bg-blue-600 h-1.5 rounded-full transition-all duration-700 ease-out" style="width:0%"></div></div>
+                        </div>
+                        <div class="relative skill-bar" data-pct="75">
+                            <div class="flex justify-between items-end mb-2"><span class="text-sm font-bold text-gray-900 uppercase tracking-wider">MySQL</span><span class="text-[11px] font-bold text-blue-600 tracking-widest">75%</span></div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="bar-fill bg-blue-600 h-1.5 rounded-full transition-all duration-700 ease-out" style="width:0%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 reveal">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-10 border-b-2 border-black inline-block pb-1">Tools</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-white px-6 py-3 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center justify-center cursor-default"><span class="text-sm font-bold text-gray-700 tracking-wide">VS Code</span></div>
+                        <div class="bg-white px-6 py-3 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center justify-center cursor-default"><span class="text-sm font-bold text-gray-700 tracking-wide">Postman</span></div>
+                        <div class="bg-white px-6 py-3 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center justify-center cursor-default"><span class="text-sm font-bold text-gray-700 tracking-wide">Docker</span></div>
+                        <div class="bg-white px-6 py-3 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center justify-center cursor-default"><span class="text-sm font-bold text-gray-700 tracking-wide">Git</span></div>
+                        <div class="bg-white px-6 py-3 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center justify-center cursor-default"><span class="text-sm font-bold text-gray-700 tracking-wide">GitHub</span></div>
+                    </div>
+
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 mt-10">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-2 block">Daily Workflow</span>
+                        <p class="text-sm text-gray-600 leading-relaxed font-medium">Constantly utilizing <span class="text-gray-900 font-bold">VS Code</span> for full-stack development, relying on <span class="text-gray-900 font-bold">Postman</span> for robust API testing, and maintaining clean version control via <span class="text-gray-900 font-bold">Git/GitHub</span>. Deployments are streamlined using <span class="text-gray-900 font-bold">Docker</span> containers.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="relative w-full bg-[#fcfcfc] py-20 px-6 sm:px-10 md:px-24">
+            <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+
+                <div class="lg:col-span-7 reveal">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-10 border-b-2 border-black inline-block pb-1">Projects</h3>
+                    <div class="space-y-12 border-l border-gray-200 pl-6 md:pl-8 relative">
+
+                        <div class="relative">
+                            <div class="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 rounded-full bg-blue-600 ring-4 ring-[#fcfcfc]"></div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-2">Face Recognition Attendance System</h4>
+                            <p class="text-blue-700 font-['Dancing_Script',_cursive] text-2xl mb-4">Full Stack Application</p>
+                            <ul class="space-y-2 text-gray-600 text-sm leading-relaxed list-disc list-outside ml-4 marker:text-gray-300">
+                                <li>Developed a face recognition-based attendance system using React for the frontend and Django REST Framework (DRF) for the backend to automate and secure attendance marking.</li>
+                                <li>Implemented real-time face detection and verification using the Python Face Recognition library, improving accuracy and reducing manual errors.</li>
+                                <li>Built an intuitive and responsive user interface with React and Tailwind CSS for seamless interaction and performance.</li>
+                            </ul>
+                            <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 mt-5 inline-block">
+                                <span class="text-[10px] font-bold uppercase text-gray-400 block mb-1">Technologies Used</span>
+                                <p class="text-xs text-gray-600 font-semibold leading-relaxed">React, Django REST Framework, Python (FaceRecognition), Tailwind CSS, Framer-Motion</p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 rounded-full bg-gray-300 ring-4 ring-[#fcfcfc]"></div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-2">Food Redistribution & Waste Utilization</h4>
+                            <p class="text-blue-700 font-['Dancing_Script',_cursive] text-2xl mb-4">Social-Impact Web Platform</p>
+                            <ul class="space-y-2 text-gray-600 text-sm leading-relaxed list-disc list-outside ml-4 marker:text-gray-300">
+                                <li>Built a social-impact web platform to connect food donors with individuals, charities, and organizations to reduce food wastage.</li>
+                                <li>Implemented secure donor/acceptor registration with admin approval, location-based food listings, and request management.</li>
+                                <li>Enabled waste-to-resource workflow allowing farm agents and fertilizer producers to collect expired food waste.</li>
+                            </ul>
+                            <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 mt-5 inline-block">
+                                <span class="text-[10px] font-bold uppercase text-gray-400 block mb-1">Technologies Used</span>
+                                <p class="text-xs text-gray-600 font-semibold leading-relaxed">Django REST Framework, React, Tailwind CSS, MySQL</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 reveal">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-10 border-b-2 border-black inline-block pb-1">Certifications</h3>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="flex items-center p-5 bg-white border border-gray-100 rounded-2xl hover:border-blue-200 transition-all group">
+                            <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 font-bold text-xs mr-4 group-hover:bg-blue-600 group-hover:text-white transition-all">✓</div>
+                            <div><h5 class="text-sm font-bold text-gray-900">Full Stack Developer</h5><p class="text-[11px] text-gray-400 uppercase tracking-tighter">Luminar Technolab</p></div>
+                        </div>
+                        <div class="flex items-center p-5 bg-white border border-gray-100 rounded-2xl hover:border-blue-200 transition-all group">
+                            <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 font-bold text-xs mr-4 group-hover:bg-blue-600 group-hover:text-white transition-all">✓</div>
+                            <div><h5 class="text-sm font-bold text-gray-900">Certified Developer</h5><p class="text-[11px] text-gray-400 uppercase tracking-tighter">NACTET</p></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="relative w-full bg-[#fcfcfc] py-24 md:py-32 px-6 md:px-12 lg:px-24 overflow-hidden">
+            <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50 -z-10"></div>
+
+            <div class="max-w-[1200px] mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+
+                    <div class="reveal">
+                        <h4 class="text-blue-600 font-bold uppercase tracking-[0.3em] text-sm mb-4">Get in Touch</h4>
+                        <h2 class="text-4xl sm:text-5xl italic md:text-7xl font-display font-black text-gray-900 leading-tight mb-8">Let's build <br /> something great.</h2>
+                        <p class="text-gray-500 text-base sm:text-lg max-w-md leading-relaxed mb-12">Currently available for full-stack opportunities and interesting collaborations. I usually respond within 24 hours.</p>
+
+                        <div class="flex gap-6">
+                            <a href="#" aria-label="LinkedIn" class="text-3xl text-gray-400 transition-all duration-300 hover:text-[#0077b5] transform hover:-translate-y-1">
+                                <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                            <a href="#" aria-label="GitHub" class="text-3xl text-gray-400 transition-all duration-300 hover:text-[#333] transform hover:-translate-y-1">
+                                <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                            <a href="#" aria-label="WhatsApp" class="text-3xl text-gray-400 transition-all duration-300 hover:text-[#25D366] transform hover:-translate-y-1">
+                                <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.734-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.852.002-2.632-1.023-5.105-2.887-6.972C16.566 1.814 14.09 .78 11.457.78 6.022.78 1.598 5.2 1.594 10.632c-.001 1.71.461 3.38 1.337 4.847l-.997 3.641 3.713-.974z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-7 sm:p-8 md:p-12 rounded-[40px] border border-gray-100 shadow-sm relative overflow-hidden group reveal">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-50/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                        <div class="relative z-10 space-y-8 sm:space-y-10">
+                            <a href="mailto:athunv856@gmail.com" class="flex items-start gap-5 sm:gap-6 group/item transition-all">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gray-200 flex items-center justify-center text-2xl text-gray-600 group-hover/item:bg-blue-600 group-hover/item:text-white transition-all duration-300 shadow-sm flex-shrink-0">
+                                    <svg class="w-5 h-5 sm:w-6 sm:h-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-1">Email</p>
+                                    <p class="text-base sm:text-lg font-bold text-gray-800 group-hover/item:text-blue-600 transition-colors break-all">athunv856@gmail.com</p>
+                                </div>
+                            </a>
+
+                            <a href="tel:+919946154853" class="flex items-start gap-5 sm:gap-6 group/item transition-all">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gray-200 flex items-center justify-center text-2xl text-gray-600 group-hover/item:bg-blue-600 group-hover/item:text-white transition-all duration-300 shadow-sm flex-shrink-0">
+                                    <svg class="w-5 h-5 sm:w-6 sm:h-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.387a12.017 12.017 0 0 1-4.522-4.522c-.154-.44.011-.927.387-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" /></svg>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-1">Phone</p>
+                                    <p class="text-base sm:text-lg font-bold text-gray-800 group-hover/item:text-blue-600 transition-colors">+91 9946154853</p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="flex items-start gap-5 sm:gap-6 group/item transition-all">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gray-200 flex items-center justify-center text-2xl text-gray-600 group-hover/item:bg-blue-600 group-hover/item:text-white transition-all duration-300 shadow-sm flex-shrink-0">
+                                    <svg class="w-5 h-5 sm:w-6 sm:h-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-1">Location</p>
+                                    <p class="text-base sm:text-lg font-bold text-gray-800 group-hover/item:text-blue-600 transition-colors">Kerala, India</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="mt-14 sm:mt-16 pt-8 border-t border-gray-100">
+                            <p class="text-gray-900 font-black text-xl tracking-tighter">ATHUN VELANDY<span class="text-blue-600">.</span></p>
+                            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Full Stack Developer</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer class="w-full bg-[#fcfcfc] border-t border-gray-100 py-6 text-center">
+            <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400">&copy; 2026 Athun Velandy. All rights reserved.</p>
+        </footer>
+
+        <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Hero entrance animation
+      const bgText = document.getElementById("bg-text");
+      bgText.classList.remove("opacity-0", "scale-[0.95]");
+      bgText.classList.add("opacity-100", "scale-100");
+
+      const middleText = document.getElementById("middle-text");
+      middleText.classList.remove("opacity-0", "translate-y-[30px]");
+      middleText.classList.add("opacity-100", "translate-y-0");
+
+      const marker = document.getElementById("marker");
+      marker.classList.remove("opacity-0", "-translate-x-[20px]", "-rotate-12");
+      marker.classList.add("opacity-100", "translate-x-0", "rotate-0");
+
+      const heroImg = document.getElementById("hero-img");
+      heroImg.classList.remove("opacity-0", "translate-y-[50px]");
+      heroImg.classList.add("opacity-100", "translate-y-0");
+
+      // Nav smooth scroll + active section tracking
+      const navLinks = document.querySelectorAll(".nav-link");
+      const sections = document.querySelectorAll("section, #home");
+      const logo = document.getElementById("nav-logo");
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = document.getElementById(link.getAttribute("href").substring(1));
+          if (target) target.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+
+      logo.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+      logo.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") window.scrollTo({ top: 0, behavior: "smooth" }); });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const currentId = entry.target.getAttribute("id");
+            navLinks.forEach(link => {
+              const underline = link.querySelector(".nav-underline");
+              const hrefTarget = link.getAttribute("href").substring(1);
+              if (hrefTarget === currentId) {
+                link.classList.remove("text-gray-400");
+                link.classList.add("text-black");
+                underline.classList.remove("w-0");
+                underline.classList.add("w-full");
+              } else {
+                link.classList.remove("text-black");
+                link.classList.add("text-gray-400");
+                underline.classList.remove("w-full");
+                underline.classList.add("w-0");
+              }
+            });
+          }
+        });
+      }, { root: null, rootMargin: "-20% 0px -60% 0px", threshold: 0 });
+      sections.forEach(section => observer.observe(section));
+
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+      let menuOpen = false;
+
+      function setMenu(open) {
+        menuOpen = open;
+        menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        const lines = menuBtn.querySelectorAll(".hamburger-line");
+        if (open) {
+          mobileMenu.classList.remove("opacity-0", "pointer-events-none", "-translate-y-4");
+          mobileMenu.classList.add("opacity-100", "translate-y-0");
+          lines[0].style.transform = "translateY(6px) rotate(45deg)";
+          lines[1].style.opacity = "0";
+          lines[2].style.transform = "translateY(-6px) rotate(-45deg)";
+          document.body.style.overflow = "hidden";
+        } else {
+          mobileMenu.classList.add("opacity-0", "pointer-events-none", "-translate-y-4");
+          mobileMenu.classList.remove("opacity-100", "translate-y-0");
+          lines[0].style.transform = "";
+          lines[1].style.opacity = "";
+          lines[2].style.transform = "";
+          document.body.style.overflow = "";
+        }
+      }
+
+      menuBtn.addEventListener("click", () => setMenu(!menuOpen));
+      mobileLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          setMenu(false);
+          const target = document.getElementById(link.getAttribute("href").substring(1));
+          setTimeout(() => { if (target) target.scrollIntoView({ behavior: "smooth" }); }, 300);
+        });
+      });
+
+      // Scroll reveal for sections
+      const revealEls = document.querySelectorAll(".reveal");
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      revealEls.forEach(el => revealObserver.observe(el));
+
+      // Animate skill bars when in view
+      const skillBars = document.querySelectorAll(".skill-bar");
+      const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const pct = entry.target.getAttribute("data-pct");
+            entry.target.querySelector(".bar-fill").style.width = pct + "%";
+            skillObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      skillBars.forEach(bar => skillObserver.observe(bar));
+    });
+  </script>
+    </body>
+</html>
